@@ -15,7 +15,7 @@ fun main (args: Array<String>) {
 
     println("시도할 회수는 몇회인가요?")
     val tryCount: Int = readLine()!!.toInt()
-    check(tryCount !is Number || tryCount < 1) { "시도 할 회수는 1이상의 숫자를 입력 하여 주세요"}
+    check(tryCount is Number && tryCount > 0) { "시도 할 회수는 1이상의 숫자를 입력 하여 주세요"}
     val random: Random = Random()
 
     for (idx in 0 until tryCount) {
